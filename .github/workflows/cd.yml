@@ -1,0 +1,25 @@
+name: CD
+on:
+  workflow_dispatch:
+    inputs:
+      manual_deploy:
+        description: 'deploy to docker hub'
+        default: false
+        required: true
+        type: boolean
+  pull_request:
+    branches: [main]
+    types: [closed]
+    paths-ignore:
+      - 'LICENSE'
+      - 'README.md'
+
+jobs:
+  deploy:
+    if: ${{ github.event.pull_request.merged == true || inputs.manual_deploy == true }}
+    uses: trfore/docker-image/.github/workflows/deploy_docker_hub.yml@main # remote repo
+    with:
+      PLATFORMS: 'linux/amd64'
+    secrets:
+      USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}

@@ -1,0 +1,11 @@
+name: Check & Update Base OS Digest
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * 1,3,5'
+
+jobs:
+  update:
+    uses: trfore/docker-image/.github/workflows/update_base_digest.yml@main # remote repo
+    secrets:
+      TOKEN: ${{ secrets.AUTO_PR_TOKEN }}
