@@ -1,16 +1,16 @@
-# docker-{DISTRO}-systemd
+# docker-ubuntu2404-systemd
 
-[![CI](https://github.com/trfore/docker-image/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/trfore/docker-image/actions/workflows/ci.yml)
-[![CD](https://github.com/trfore/docker-image/actions/workflows/cd.yml/badge.svg?branch=main)](https://github.com/trfore/docker-image/actions/workflows/cd.yml)
+[![CI](https://github.com/trfore/docker-ubuntu2404-systemd/actions/workflows/ci.yml/badge.svg)](https://github.com/trfore/docker-ubuntu2404-systemd/actions/workflows/ci.yml)
+[![CD](https://github.com/trfore/docker-ubuntu2404-systemd/actions/workflows/cd.yml/badge.svg)](https://github.com/trfore/docker-ubuntu2404-systemd/actions/workflows/cd.yml)
 
-A minimal systemd enabled {DISTRO} Docker image for testing Ansible roles with Molecule.
+A minimal systemd enabled Ubuntu 24.04 Docker image for testing Ansible roles with Molecule.
 
 NOTE: This image does NOT contain Ansible tooling, e.g. `ansible-core` or `yamllint`. Thus, the use case is as target host for Ansible controllers or within the Molecule `create`/`converge`/`test` cycle.
 
 **Docker Pull Command**
 
 ```sh
-docker pull trfore/docker-{DISTRO}-systemd
+docker pull trfore/docker-ubuntu2404-systemd
 ```
 
 ## How to Build
@@ -18,9 +18,9 @@ docker pull trfore/docker-{DISTRO}-systemd
 This image is built on Docker Hub automatically any time the upstream OS image is rebuilt, and any time a commit is made or merged to the `main` branch. But if you need to build the image on your own locally, do the following:
 
 1. Install [docker]
-2. Clone the repo, `git clone https://github.com/trfore/docker-{DISTRO}-systemd.git`
+2. Clone the repo, `git clone https://github.com/trfore/docker-ubuntu2404-systemd.git`
 3. `cd` into the directory
-4. Run `docker build --tag trfore/docker-{DISTRO}-systemd .`
+4. Run `docker build --tag trfore/docker-ubuntu2404-systemd .`
 
 ## How to Use
 
@@ -31,7 +31,7 @@ This image is built on Docker Hub automatically any time the upstream OS image i
 ```yaml
 platforms:
   - name: instance
-    image: trfore/docker-{DISTRO}-systemd:latest
+    image: trfore/docker-ubuntu2404-systemd:latest
     tmpfs:
       - /run
       - /tmp
@@ -45,17 +45,17 @@ platforms:
 ### Interactively Using Docker
 
 1. Install [docker]
-2. Build an image locally (see above) or pull from Docker Hub: `docker pull trfore/docker-{DISTRO}-systemd:latest`
+2. Build an image locally (see above) or pull from Docker Hub: `docker pull trfore/docker-ubuntu2404-systemd:latest`
 3. Run a container from the image:
 
 ```sh
-docker run -d -it --name {DISTRO}-systemd --privileged --cgroupns=host --tmpfs=/run --tmpfs=/tmp --volume=/sys/fs/cgroup:/sys/fs/cgroup:rw trfore/docker-{DISTRO}-systemd:latest
+docker run -d -it --name ubuntu2404-systemd --privileged --cgroupns=host --tmpfs=/run --tmpfs=/tmp --volume=/sys/fs/cgroup:/sys/fs/cgroup:rw trfore/docker-ubuntu2404-systemd:latest
 ```
 
 4. Use it, example:
 
 ```sh
-docker exec -it {DISTRO}-systemd /bin/bash
+docker exec -it ubuntu2404-systemd /bin/bash
 ```
 
 ### Using Podman
@@ -63,7 +63,7 @@ docker exec -it {DISTRO}-systemd /bin/bash
 - Podman defaults to running containers in systemd mode, `--systemd=true`, and will mount the required tmpfs and cgroup filesystem. See [Podman Docs: Commands `run --systemd`] for details.
 
 ```sh
-podman run -d -it --name {DISTRO}-systemd docker.io/trfore/docker-{DISTRO}-systemd:latest
+podman run -d -it --name ubuntu2404-systemd docker.io/trfore/docker-ubuntu2404-systemd:latest
 ```
 
 ## Additional Images
@@ -115,6 +115,6 @@ Inspired by Jeff Geerling's ([@geerlingguy](https://github.com/geerlingguy)), Ce
 [trfore/docker-ubuntu2004-systemd]: https://hub.docker.com/r/trfore/docker-ubuntu2004-systemd
 [trfore/docker-ubuntu2204-systemd]: https://hub.docker.com/r/trfore/docker-ubuntu2204-systemd
 [trfore/docker-ubuntu2404-systemd]: https://hub.docker.com/r/trfore/docker-ubuntu2404-systemd
-[github runner - ubuntu 20.04]: https://github.com/actions/runner-images/blob/main/images/linux/Ubuntu2004-Readme.md
-[github runner - ubuntu 22.04]: https://github.com/actions/runner-images/blob/main/images/linux/Ubuntu2204-Readme.md
+[github runner - ubuntu 20.04]: https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2004-Readme.md
+[github runner - ubuntu 22.04]: https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md
 [Podman Docs: Commands `run --systemd`]: https://docs.podman.io/en/latest/markdown/podman-run.1.html#systemd-true-false-always
