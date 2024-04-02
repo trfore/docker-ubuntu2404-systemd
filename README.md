@@ -71,6 +71,7 @@ podman run -d -it --name ubuntu2404-systemd docker.io/trfore/docker-ubuntu2404-s
 | Base OS                          | Github                      | Docker Hub                         |
 | -------------------------------- | --------------------------- | ---------------------------------- |
 | [CentOS Stream 8][centos-stream] | [docker-centos8-systemd]    | [trfore/docker-centos8-systemd]    |
+| [CentOS Stream 9][centos-stream] | [docker-centos9-systemd]    | [trfore/docker-centos9-systemd]    |
 | [Debian 10][debian]              | [docker-debian10-systemd]   | [trfore/docker-debian10-systemd]   |
 | [Debian 11][debian]              | [docker-debian11-systemd]   | [trfore/docker-debian11-systemd]   |
 | [Debian 12][debian]              | [docker-debian12-systemd]   | [trfore/docker-debian12-systemd]   |
@@ -102,6 +103,7 @@ Inspired by Jeff Geerling's ([@geerlingguy](https://github.com/geerlingguy)), Ce
 [rocky]: https://hub.docker.com/r/rockylinux/
 [ubuntu]: https://hub.docker.com/_/ubuntu/
 [docker-centos8-systemd]: https://github.com/trfore/docker-centos8-systemd/blob/main/Dockerfile
+[docker-centos9-systemd]: https://github.com/trfore/docker-centos9-systemd/blob/main/Dockerfile
 [docker-debian10-systemd]: https://github.com/trfore/docker-debian10-systemd/blob/main/Dockerfile
 [docker-debian11-systemd]: https://github.com/trfore/docker-debian11-systemd/blob/main/Dockerfile
 [docker-debian12-systemd]: https://github.com/trfore/docker-debian11-systemd/blob/main/Dockerfile
@@ -109,6 +111,7 @@ Inspired by Jeff Geerling's ([@geerlingguy](https://github.com/geerlingguy)), Ce
 [docker-ubuntu2204-systemd]: https://github.com/trfore/docker-ubuntu2204-systemd/blob/main/Dockerfile
 [docker-ubuntu2404-systemd]: https://github.com/trfore/docker-ubuntu2404-systemd/blob/main/Dockerfile
 [trfore/docker-centos8-systemd]: https://hub.docker.com/r/trfore/docker-centos8-systemd
+[trfore/docker-centos9-systemd]: https://hub.docker.com/r/trfore/docker-centos9-systemd
 [trfore/docker-debian10-systemd]: https://hub.docker.com/r/trfore/docker-debian10-systemd
 [trfore/docker-debian11-systemd]: https://hub.docker.com/r/trfore/docker-debian11-systemd
 [trfore/docker-debian12-systemd]: https://hub.docker.com/r/trfore/docker-debian12-systemd
