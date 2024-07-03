@@ -1,3 +1,2 @@
-# linted by yamllint
-*.yaml
-*.yml
+# dev environments
+.venv
