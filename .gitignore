@@ -1,5 +1,8 @@
 # docker
 .cache
 
+# dev environments
+.venv
+
 # general extras
 .DS_Store
