@@ -16,13 +16,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  cgroup-v1:
-    uses: trfore/docker-image/.github/workflows/test_systemd.yml@main
-    with:
-      continue-on-error: true
-      runner: ubuntu-20.04
-      volume-permission: ro
-
   cgroup-v2:
     uses: trfore/docker-image/.github/workflows/test_systemd.yml@main
     with:
@@ -33,7 +26,6 @@ jobs:
   check:
     if: success() || failure()
     needs:
-      - cgroup-v1
       - cgroup-v2
     runs-on: ubuntu-latest
     steps:
