@@ -32,8 +32,9 @@ or merged to the `main` branch. But if you need to build the image on your own l
 
   ```yaml
   platforms:
-    - name: instance
-      image: trfore/docker-ubuntu2404-systemd:latest
+    - name: ${MOLECULE_NAME:-instance}
+      image: ${MOLECULE_IMAGE:-trfore/docker-ubuntu2404-systemd}
+      command: ${MOLECULE_COMMAND:-""}
       tmpfs:
         - /run
         - /tmp
