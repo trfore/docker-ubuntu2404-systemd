@@ -16,20 +16,29 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  cgroup-v2:
+  cgroup-v2-amd64:
     uses: trfore/docker-image/.github/workflows/test_systemd.yml@main
     with:
       continue-on-error: false
-      runner: ubuntu-22.04
+      runner: ubuntu-24.04
+      volume-permission: rw
+
+  cgroup-v2-arm64:
+    uses: trfore/docker-image/.github/workflows/test_systemd.yml@main
+    with:
+      continue-on-error: false
+      runner: ubuntu-24.04-arm
       volume-permission: rw
 
   check:
     if: success() || failure()
     needs:
-      - cgroup-v2
+      - cgroup-v2-amd64
+      - cgroup-v2-arm64
     runs-on: ubuntu-latest
     steps:
       - run: >-
           python -c "assert set([
-          '${{ needs.cgroup-v2.result }}',
+          '${{ needs.cgroup-v2-amd64.result }}',
+          '${{ needs.cgroup-v2-arm64.result }}',
           ]) == {'success'}"
