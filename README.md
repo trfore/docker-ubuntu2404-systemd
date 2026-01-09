@@ -84,9 +84,10 @@ or merged to the `main` branch. But if you need to build the image on your own l
 | [Ubuntu 22.04][ubuntu]           | [docker-ubuntu2204-systemd] | [trfore/docker-ubuntu2204-systemd] |
 | [Ubuntu 24.04][ubuntu]           | [docker-ubuntu2404-systemd] | [trfore/docker-ubuntu2404-systemd] |
 
-## Maintainers
+## Contributors
 
-- <https://github.com/trfore>
+- [trfore](https://github.com/trfore)
+- [frohoff](https://github.com/frohoff)
 
 ## Acknowledgements
 
