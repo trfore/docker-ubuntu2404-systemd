@@ -91,6 +91,8 @@ or merged to the `main` branch. But if you need to build the image on your own l
 
 ## Acknowledgements
 
+Special thanks to [frohoff](https://github.com/frohoff) for adding and testing the ARM64 support.
+
 Inspired by Jeff Geerling's ([@geerlingguy](https://github.com/geerlingguy)), CentOS 8, Debian 10/11, and Ubuntu 20/22
 docker images for ansible, [geerlingguy/docker-\*-ansible](https://github.com/geerlingguy?tab=repositories&q=docker-ansible).
 
