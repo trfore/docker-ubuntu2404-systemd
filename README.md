@@ -14,6 +14,10 @@ host for Ansible controllers or within the Molecule `create`/`converge`/`test` c
 docker pull trfore/docker-ubuntu2404-systemd
 ```
 
+### Supported Architectures
+- amd64
+- arm64v8
+
 ## How to Build
 
 This image is built on Docker Hub automatically any time the upstream OS image is rebuilt, and any time a commit is made
@@ -84,11 +88,14 @@ or merged to the `main` branch. But if you need to build the image on your own l
 | [Ubuntu 22.04][ubuntu]           | [docker-ubuntu2204-systemd] | [trfore/docker-ubuntu2204-systemd] |
 | [Ubuntu 24.04][ubuntu]           | [docker-ubuntu2404-systemd] | [trfore/docker-ubuntu2404-systemd] |
 
-## Maintainers
+## Contributors
 
-- <https://github.com/trfore>
+- [trfore](https://github.com/trfore)
+- [frohoff](https://github.com/frohoff)
 
 ## Acknowledgements
+
+Special thanks to [frohoff](https://github.com/frohoff) for adding and testing the ARM64 support.
 
 Inspired by Jeff Geerling's ([@geerlingguy](https://github.com/geerlingguy)), CentOS 8, Debian 10/11, and Ubuntu 20/22
 docker images for ansible, [geerlingguy/docker-\*-ansible](https://github.com/geerlingguy?tab=repositories&q=docker-ansible).
