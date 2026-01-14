@@ -14,6 +14,10 @@ host for Ansible controllers or within the Molecule `create`/`converge`/`test` c
 docker pull trfore/docker-ubuntu2404-systemd
 ```
 
+### Supported Architectures
+- amd64
+- arm64v8
+
 ## How to Build
 
 This image is built on Docker Hub automatically any time the upstream OS image is rebuilt, and any time a commit is made
